@@ -7,7 +7,7 @@ const AccountPage = ({navigation}) => {
   const handleLogOut = async () => {
     try {
       await AsyncStorage.clear();
-      await navigation.navigate('AuthStack', {screen: 'Login'});
+      // await navigation.push('Auth');
     } catch (error) {
       alert(error.message);
     }

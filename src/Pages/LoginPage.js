@@ -40,21 +40,18 @@ const LoginPage = ({navigation}) => {
   };
 
   if (data) {
-    const {token, user, message} = data;
+    const {token, user} = data;
     storeToken(token);
     storeUser(user);
-    // console.log(message);
   }
 
-  if (isSuccess) {
-    navigation.navigate('App', {
-      screen: 'HomeStack',
-    });
-  }
+  // if (isSuccess) {
+  //   navigation.push('Main');
+  // }
 
-  if (error) {
-    alert(error.data.message);
-  }
+  // if (error) {
+  //   alert(error.data.message);
+  // }
 
   const handleSubmit = async () => {
     await login(user);
